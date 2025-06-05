@@ -1,0 +1,47 @@
+{
+  "name": "engdict",
+  "displayName": "eng-dict",
+  "description": "To Keep Our English Study",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.100.0"
+  },
+  "activationEvents": [
+    
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "engdict.search",
+        "title": "Search English Word"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "engdict.search",
+        "key": "ctrl+shift+t",
+        "when": "editorTextFocus"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/node": "20.x",
+    "@types/vscode": "^1.100.0",
+    "typescript": "^5.8.3",
+    "eslint": "^8.31.1",
+    "@typescript-eslint/parser": "^8.31.1",
+    "@typescript-eslint/eslint-plugin": "^8.31.1"
+  },
+  "dependencies": {
+    "puppeteer": "^20.0.0"
+  }
+}
